@@ -10,7 +10,7 @@ module Api
           @wallet.id
         ).order(created_at: :desc)
 
-        render json: transactions
+        render json: transactions.as_json(methods: :type)
       end
 
       def deposit
